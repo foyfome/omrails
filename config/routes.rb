@@ -6,7 +6,10 @@ Omrails::Application.routes.draw do
 
   get 'about' => 'pages#about'
   
-  root :to => 'pages#home'
+  root :to => 'pins#index'
+
+  match '/users/:id', :to => 'users#show', :as => :user
+  match '/all_users', :to => 'users#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
